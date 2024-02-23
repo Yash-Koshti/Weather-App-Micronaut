@@ -17,9 +17,16 @@ class WeatherControllerShould {
   WeatherController weatherController;
 
   @Test
-  @DisplayName("calls weather service get by zip code")
-  void calls_weather_service_get_by_zip_code() {
+  @DisplayName("calls weather service to get weather by zip code")
+  void calls_weather_service_to_get_weather_by_zip_code() {
       weatherController.getByZip("01581");
       verify(weatherService).getByZip("01581");
+  }
+
+  @Test
+  @DisplayName("calls weather service to get weather by city")
+  void calls_weather_service_to_get_weather_by_city() {
+    weatherController.getByCity("Westborough");
+    verify(weatherService).getByCity("Westborough");
   }
 }

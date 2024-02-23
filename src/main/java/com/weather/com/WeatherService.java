@@ -13,4 +13,8 @@ public class WeatherService {
   public Weather getByZip(String zip) {
     return weatherApi.getWeather(zip);
   }
+
+  public Weather getByCity(String city) {
+    return weatherApi.getWeather(city);
+  }
 }

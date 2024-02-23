@@ -21,9 +21,16 @@ class WeatherServiceShould {
         weatherService = new WeatherService(weatherApi);
     }
     @Test
-    @DisplayName("call the http client to retrieve realtime weather data")
-    void call_the_http_client_to_retrieve_realtime_weather_data() {
+    @DisplayName("call weather api to retrieve realtime weather by zip code")
+    void retrieve_realtime_weather_by_zip_code() {
         weatherService.getByZip("01581");
         verify(weatherApi).getWeather("01581");
+    }
+
+    @Test
+    @DisplayName("retrieve realtime weather by city")
+    void retrieve_realtime_weather_by_city() {
+        weatherService.getByCity("Westborough");
+        verify(weatherApi).getWeather("Westborough");
     }
 }
