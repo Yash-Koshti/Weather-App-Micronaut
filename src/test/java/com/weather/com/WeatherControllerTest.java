@@ -39,4 +39,12 @@ class WeatherControllerTest {
     assertThat(weather.location().name()).isEqualTo("Paris");
     assertThat(weather.location().region()).isEqualTo("Ile-de-France");
   }
+
+  @Test
+  @DisplayName("retrieve weather by IP address")
+  void retrieve_weather_by_ip_address() {
+    Weather weather = client.toBlocking().exchange("/weather/ip/100.0.0.1", Weather.class).body();
+    assertThat(weather.location().name()).isEqualTo("Boston");
+    assertThat(weather.location().region()).isEqualTo("Massachusetts");
+  }
 }

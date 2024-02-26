@@ -36,4 +36,11 @@ class WeatherControllerShould {
     weatherController.getByCountry("France");
     verify(weatherService).getByCountry("France");
   }
+
+  @Test
+  @DisplayName("calls weather service to get weather by ip address")
+  void calls_weather_service_to_get_weather_by_ip_address() {
+    weatherController.getByIpAddress("100.0.0.1");
+    verify(weatherService).getByIpAddress("100.0.0.1");
+  }
 }

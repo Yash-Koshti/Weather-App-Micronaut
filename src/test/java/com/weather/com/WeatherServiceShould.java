@@ -40,4 +40,11 @@ class WeatherServiceShould {
         weatherService.getByCountry("France");
         verify(weatherApi).getWeather("France");
     }
+
+  @Test
+  @DisplayName("retrieve realtime weather by ip address")
+  void retrieve_realtime_weather_by_ip_address() {
+    weatherService.getByIpAddress("100.0.0.1");
+    verify(weatherApi).getWeather("100.0.0.1");
+  }
 }

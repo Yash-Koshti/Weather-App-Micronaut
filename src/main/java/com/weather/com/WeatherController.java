@@ -28,4 +28,9 @@ public class WeatherController {
     public Weather getByCountry(String country) {
         return weatherService.getByCountry(country);
     }
+
+    @Get(uri = "/ip/{ip}")
+    public Weather getByIpAddress(String ip) {
+        return weatherService.getByIpAddress(ip);
+    }
 }

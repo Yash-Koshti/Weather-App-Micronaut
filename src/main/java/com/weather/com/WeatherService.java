@@ -21,4 +21,8 @@ public class WeatherService {
   public Weather getByCountry(String country) {
     return weatherApi.getWeather(country);
   }
+
+  public Weather getByIpAddress(String ip) {
+    return weatherApi.getWeather(ip);
+  }
 }
