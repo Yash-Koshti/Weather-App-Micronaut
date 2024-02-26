@@ -17,4 +17,8 @@ public class WeatherService {
   public Weather getByCity(String city) {
     return weatherApi.getWeather(city);
   }
+
+  public Weather getByCountry(String country) {
+    return weatherApi.getWeather(country);
+  }
 }

@@ -33,4 +33,11 @@ class WeatherServiceShould {
         weatherService.getByCity("Westborough");
         verify(weatherApi).getWeather("Westborough");
     }
+
+    @Test
+    @DisplayName("retrieve realtime weather by country")
+    void retrieve_realtime_weather_by_country() {
+        weatherService.getByCountry("France");
+        verify(weatherApi).getWeather("France");
+    }
 }

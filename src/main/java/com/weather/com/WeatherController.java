@@ -13,7 +13,6 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-//    @ExecuteOn(TaskExecutors.BLOCKING)
     @Get(uri="/zip/{zip}")
     public Weather getByZip(String zip) {
         return weatherService.getByZip(zip);
@@ -23,5 +22,10 @@ public class WeatherController {
     @Get(uri="/city/{city}")
     public Weather getByCity(String city) {
         return weatherService.getByCity(city);
+    }
+
+    @Get(uri="/country/{country}")
+    public Weather getByCountry(String country) {
+        return weatherService.getByCountry(country);
     }
 }

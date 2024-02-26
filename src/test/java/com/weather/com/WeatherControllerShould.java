@@ -29,4 +29,11 @@ class WeatherControllerShould {
     weatherController.getByCity("Westborough");
     verify(weatherService).getByCity("Westborough");
   }
+
+  @Test
+  @DisplayName("calls weather service to get weather by country")
+  void calls_weather_service_to_get_weather_by_country() {
+    weatherController.getByCountry("France");
+    verify(weatherService).getByCountry("France");
+  }
 }
